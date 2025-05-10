@@ -4,6 +4,8 @@
 一个基于 PyTorch 和 ResNet18 构建的猫狗图像识别项目，支持通过网页上传图片识别是否是猫还是狗。
 最新版实现了PyTorch + YOLOv8的实现版。
 
+<a href='https://github.com/yinlin712/dog-cat-classifiy/tree/v2'>点我切换到v2分支</a>
+
 SYLU深度学习课程大作业，built by yinlin
 
 
