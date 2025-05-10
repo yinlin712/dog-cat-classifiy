@@ -8,6 +8,7 @@
 
 SYLU深度学习课程大作业，built by yinlin
 
+**5月10日更新：doc目录下增加了Latex作业报告文档**
 
 ## 📦 项目结构
 
@@ -20,6 +21,7 @@ dog-cat-classifiy/
 │   └── val/                   # 验证集（按 cats/dogs 分类）
 │       ├── dogs/
 │       └── cats/
+├── doc/                       # Latex报告文档，建议使用Overleaf打开，使用Xelatex编译器
 ├── runs/                      # yolo训练输出
 ├── src/
 │   ├── model.py              # ResNet 模型构建
