@@ -11,7 +11,6 @@ model.load_state_dict(torch.load("cat_dog_classifier.pth", map_location=device))
 model.to(device)  # 把模型转移到 GPU（或 CPU）
 model.eval()
 
-
 # 图像预处理
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
@@ -20,15 +19,20 @@ transform = transforms.Compose([
 
 # 页面
 st.title("🐱🐶 猫狗识别 AI")
+st.write("上传一张猫或狗的图片，AI 会为你识别哦！")
+
+# 上传图片
 uploaded_file = st.file_uploader("上传一张猫或狗的图片", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
+    # 打开并显示上传的图片
     image = Image.open(uploaded_file).convert("RGB")
     st.image(image, caption="你上传的图片", use_container_width=True)
 
+    # 图像预处理
+    img_tensor = transform(image).unsqueeze(0).to(device)
 
     # 推理
-    img_tensor = transform(image).unsqueeze(0).to(device)
     with torch.no_grad():
         output = model(img_tensor)
         _, predicted = torch.max(output, 1)
